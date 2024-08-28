@@ -1,10 +1,14 @@
-import { useState } from 'react'
+import Banner from './Components/Banner/Banner'
+import CoinTable from './Components/CoinTable/CoinTable'
+import Navbar from './Components/Navbar/Navbar'
 
 function App() {
 
   return (
     <>
-      <h1>Hii</h1>
+      <Navbar />
+      <Banner />
+      <CoinTable />
     </>
   )
 }
