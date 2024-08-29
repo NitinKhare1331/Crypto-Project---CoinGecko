@@ -4,12 +4,13 @@ import { CurrencyContext } from './Context/CurrencyContext'
 
 function App() {
 
-  const [currency, setCurrency] = useState("usd");
+  // const [currency, setCurrency] = useState("usd");
+
   return (
     <>
-      <CurrencyContext.Provider value={ { currency, setCurrency } }>
+      {/* <CurrencyContext.Provider value={ { currency, setCurrency } }> */}
         <Home />
-      </CurrencyContext.Provider>
+      {/* </CurrencyContext.Provider> */}
     </>
   )
 }
