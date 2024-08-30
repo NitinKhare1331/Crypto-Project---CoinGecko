@@ -1,4 +1,4 @@
-import axiosInstance from "../helpers/axiosInstance";
+import axiosInstance from "../Helpers/axiosInstance";
 
 export async function fetchCoinData(page = 1, currency = "usd") {
     const perPage = 10;

@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { fetchCoinData } from "../../Services/fetchCoinData"
 import { useQuery } from "react-query";
 import currencyStore from '../../ZustandStore/store'
+import { useNavigate } from "react-router-dom";
 // import { CurrencyContext } from "../../Context/CurrencyContext";
 
 const CoinTable = () => {
 
     const { currency } = currencyStore() //useContext(CurrencyContext)
+
+    const navigate = useNavigate();
 
     const [page, setPage] = useState(1);
     const { data, isLoading, isError, error} = useQuery(['coins', page, currency], () => fetchCoinData(page, currency), {
@@ -15,6 +18,10 @@ const CoinTable = () => {
         cacheTime: 1000 * 60 * 2,
         staleTime: 1000 * 60 * 2,
     });
+
+    function handleCoinRedirect(id){
+        navigate(`./details/${id}`);
+    }
 
     if(isError) {
         return <div>Error: {error.message}</div>
@@ -44,8 +51,8 @@ const CoinTable = () => {
                     {isLoading && <div>Loading....</div>}
                     {data && data.map((coin) => {
                         return (
-                            <div key={coin.id} className="w-full bg-transparent text-white flex py-4 px-2 font-semibold items-center justify-between cursor-pointer">
-                                <div className="flex items-center justify-start gap-3 basis-[35%]">
+                            <div key={coin.id} className="w-full bg-transparent text-white flex py-4 px-2 font-semibold items-center justify-between">
+                                <div onClick={() => handleCoinRedirect(coin.id)} className="flex items-center justify-start gap-3 basis-[35%] cursor-pointer">
     
                                     <div className="w-[5rem] h-[5rem]">
                                         <img src={coin.image} className="w-full h-full" />
