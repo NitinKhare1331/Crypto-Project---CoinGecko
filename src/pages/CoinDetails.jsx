@@ -18,7 +18,7 @@ function CoinDetails(){
     });
 
     if(isLoading){
-        return <div>Loading....</div>
+        return <div>Downloading coin data....</div>
     }
 
     if(isError){
