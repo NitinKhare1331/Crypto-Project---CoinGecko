@@ -1,36 +1,37 @@
 import { Route, Routes } from "react-router-dom";
-// import CoinDetails from "../../pages/CoinDetails";
-// import Home from "../../pages/Home"
-import MainLayout from "../../pages/Layout";
 import { lazy, Suspense } from "react";
-import ContentLoader, { Facebook } from "react-content-loader";
+import MainLayout from "../../pages/Layout";
+import PageLoader from "../PageLoader/PageLoader";
+import CustomErrorBoundary from "../CustomErrorBoundary/CustomErrorBoundary";
 
-function Routing(){
+const Home = lazy(() => import('../../pages/Home'));
+const CoinDetails = lazy(() => import('../../pages/CoinDetails'));
 
-    const Home = lazy(() => import("../../pages/Home")); //Lazy loading
-    const CoinDetails = lazy(() => import("../../pages/CoinDetails")); //Lazy loading    
-
+function Routing() {
 
     return (
-        <Routes>
-            <Route path="/" element={<MainLayout />}>
+        <CustomErrorBoundary>
+            <Routes>
+                <Route path="/" element={<MainLayout />} >
 
-                <Route index element={
+                    <Route index element={
+                        <Suspense fallback={<PageLoader />}>
+                            <Home />
+                        </Suspense>
+                    } />
+                    <Route path="/details/:coinId" element={
+                        
+                        <Suspense fallback={<PageLoader />}>
+                            <CoinDetails />
+                        </Suspense>
                     
-                    <Suspense fallback={<Facebook/>}>
-                        <Home />
-                    </Suspense>
-                    
-                } />
-                <Route path="/details/:coinId" element={
-                    <Suspense fallback={<Facebook/>}>
-                        <CoinDetails />
-                    </Suspense>
-                    
-                } />
+                    } />
 
-            </Route>
-        </Routes>
+                </Route>
+            
+            </Routes>
+        </CustomErrorBoundary>
+        
     )
 }
 
