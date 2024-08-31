@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchCoinDetails } from "../Services/fetchCoinDetails";
 import parse from "html-react-parser";
 import currencyStore from "../ZustandStore/store";
+import CoinInfoContainer from "../Components/CoinInfo/CoinInfoContainer";
 
 function CoinDetails(){
 
@@ -67,8 +68,8 @@ function CoinDetails(){
                         </div>
                     </div>
 
-                    <div className="md:w-2/3 w-full p-6">
-                        Coin Info
+                    <div className="md:w-2/3 w-full">
+                        <CoinInfoContainer coinId={coinId}/>
                     </div>
 
                 </div>
