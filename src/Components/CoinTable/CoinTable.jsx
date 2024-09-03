@@ -51,7 +51,7 @@ const CoinTable = () => {
                     {isLoading && <div>Loading....</div>}
                     {data && data.map((coin) => {
                         return (
-                            <div key={coin.id} className="w-full bg-transparent text-white flex py-4 px-2 font-semibold items-center justify-between">
+                            <div key={coin.id} className="w-full bg-transparent  flex py-4 px-2 font-semibold items-center justify-between">
                                 <div onClick={() => handleCoinRedirect(coin.id)} className="flex items-center justify-start gap-3 basis-[35%] cursor-pointer">
     
                                     <div className="w-[5rem] h-[5rem]">
@@ -83,12 +83,12 @@ const CoinTable = () => {
                     <button 
                     onClick={()=> setPage(page-1)} 
                     disabled = {page===1}
-                    className="btn btn-primary btn-wide text-white text-2xl">
+                    className="btn btn-primary btn-wide text-2xl">
                         Prev
                     </button>
                     <button 
                     onClick={()=> setPage(page+1)} 
-                    className="btn btn-secondary btn-wide text-white text-2xl">
+                    className="btn btn-secondary btn-wide text-2xl">
                         Next
                     </button>
                 </div>
