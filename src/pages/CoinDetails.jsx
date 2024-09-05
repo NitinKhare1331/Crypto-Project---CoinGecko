@@ -25,7 +25,7 @@ function CoinDetails(){
 
     return(
         <>
-            <div className="mt-[64px]">
+            <div className="mt-[20px]">
                 <div className="flex flex-col md:flex-row">
 
                     <div className="md:w-1/3 wfull flex flex-col items-center mt-6 md:mt-0 border-r-2 border-gray-700">
