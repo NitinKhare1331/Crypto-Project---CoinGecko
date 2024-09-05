@@ -10,7 +10,7 @@ function Navbar(){
 
     const handleToggle = (e) => {
         if(e.target.checked){
-            setTheme("dark");
+            setTheme("black");
         }
         else{
             setTheme("light")
@@ -33,7 +33,7 @@ function Navbar(){
 
     return(
         <>
-        <div className="navbar bg-neutral text-neutral-content fixed top-0 w-full z-10">
+        <div className="navbar text-primary-content w-full bg-[#0d20ba]">
             <div className="navbar-start">
                 <div className="dropdown">
                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">

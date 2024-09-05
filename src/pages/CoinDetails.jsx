@@ -13,7 +13,7 @@ function CoinDetails(){
     const {currency, isError, isLoading, coin, error} = useFetchCoin(coinId);
 
     if(isLoading){
-        return <div>Downloading coin data....</div>
+        return <div className="flex justify-center mt-20">Downloading coin data....</div>
     }
 
     if(isError){

@@ -31,35 +31,35 @@ const CoinTable = () => {
     return(
         <>
             <div className="my-5 flex flex-col items-center justify-center gap-5 w-[80vw] mx-auto">
-                <div className="w-full bg-yellow-400 text-black flex py-4 px-2 font-semibold items-center justify-center">
+                <div className="w-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white flex text-xl py-4 px-2 font-bold items-center justify-between">
                     {/* Header of the table */}
-                    <div className="basis-[35%]">
+                    <div className="basis-[25%] flex justify-start ml-20">
                         Coin
                     </div>
-                    <div className="basis-[25%]">
+                    <div className="basis-[25%] flex justify-start">
                         Price
                     </div>
-                    <div className="basis-[20%]">
+                    <div className="basis-[25%] flex justify-start">
                         24h Change
                     </div>
-                    <div className="basis-[20%]">
+                    <div className="basis-[25%] flex justify-start ">
                         Market Cap
                     </div>
                 </div>
 
-                <div className="flex flex-col w-[80vw] mx-auto">
-                    {isLoading && <div>Loading....</div>}
+                <div className="flex flex-col w-[80vw] mx-auto ml-10">
+                    {isLoading && <div className="flex items-center justify-center mb-10 mt-10">Loading....</div>}
                     {data && data.map((coin) => {
                         return (
                             <div key={coin.id} className="w-full bg-transparent  flex py-4 px-2 font-semibold items-center justify-between">
-                                <div onClick={() => handleCoinRedirect(coin.id)} className="flex items-center justify-start gap-3 basis-[35%] cursor-pointer">
+                                <div onClick={() => handleCoinRedirect(coin.id)} className="flex items-center justify-start gap-3 basis-[33%] cursor-pointer">
     
-                                    <div className="w-[5rem] h-[5rem]">
+                                    <div className="w-[3rem] h-[3rem]">
                                         <img src={coin.image} className="w-full h-full"/>
                                     </div>
 
                                     <div className="flex flex-col">
-                                        <div className="text-3xl">{coin.name}</div>
+                                        <div className="text-2xl">{coin.name}</div>
                                         <div className="text-xl">{coin.symbol}</div>
                                     </div>
     
@@ -67,12 +67,15 @@ const CoinTable = () => {
 
                                 <div className="basis-[25%]">
                                     {coin.current_price}
+                                    { currency == "usd" ? " $" : " Rs"}
                                 </div>
-                                <div className="basis-[25%]">
+                                <div className="basis-[28%] ml-10">
                                     {coin.high_24h}
+                                    { currency == "usd" ? " $" : " Rs"}
                                 </div>
-                                <div className="basis-[25%]">
+                                <div className="basis-[33%] flex justify-start">
                                     {coin.market_cap}
+                                    { currency == "usd" ? " $" : " Rs"}
                                 </div>
                             </div>
                         )
@@ -83,12 +86,12 @@ const CoinTable = () => {
                     <button 
                     onClick={()=> setPage(page-1)} 
                     disabled = {page===1}
-                    className="btn btn-primary btn-wide text-2xl">
+                    className="btn bg-[#0d20ba] btn-wide text-2xl text-white">
                         Prev
                     </button>
                     <button 
                     onClick={()=> setPage(page+1)} 
-                    className="btn btn-secondary btn-wide text-2xl">
+                    className="btn text-white btn-wide text-2xl bg-[#0d20ba]">
                         Next
                     </button>
                 </div>
