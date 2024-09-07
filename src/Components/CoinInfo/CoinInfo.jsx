@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Alert from '../Alert/Alert'
 import { Line } from 'react-chartjs-2'
 import { CategoryScale } from 'chart.js'

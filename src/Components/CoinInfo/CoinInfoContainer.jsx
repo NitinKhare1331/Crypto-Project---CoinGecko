@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CoinInfo from './CoinInfo'
 import PageLoader from '../../Components/PageLoader/PageLoader'
 import Alert from '../Alert/Alert';

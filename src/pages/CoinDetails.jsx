@@ -5,6 +5,7 @@ import parse from "html-react-parser";
 // import currencyStore from "../ZustandStore/store";
 import CoinInfoContainer from "../Components/CoinInfo/CoinInfoContainer";
 import useFetchCoin from "../Hooks/useFetchCoin";
+// import { useEffect } from "react";
 
 function CoinDetails(){
 

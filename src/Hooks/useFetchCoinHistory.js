@@ -16,6 +16,7 @@ function useFetchCoinHistory(coinId){
     });
 
     return {
+        coinId,
         isLoading,
         historicData,
         isError,

@@ -19,6 +19,8 @@ const CoinTable = () => {
         staleTime: 1000 * 60 * 2,
     });
 
+    
+
     function handleCoinRedirect(id){
         navigate(`./details/${id}`);
     }

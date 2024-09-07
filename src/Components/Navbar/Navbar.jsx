@@ -3,8 +3,11 @@
 import { useNavigate } from "react-router-dom";
 import currencyStore from "../../ZustandStore/store";
 import { useEffect, useState } from "react";
+import Search from "../Search/Search";
 
 function Navbar(){
+
+    const [showSearch, setShowSearch] = useState(false);
 
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light")
 
@@ -28,6 +31,10 @@ function Navbar(){
     function goToHome(){
         navigate('/');
     }
+
+    const toggleSearch = () => {
+        setShowSearch((prev) => !prev);
+    };
 
     const {setCurrency} = currencyStore() //useContext(CurrencyContext);
 
@@ -61,29 +68,64 @@ function Navbar(){
             <div onClick={() => goToHome()} className="navbar-center">
                 <a className="btn btn-ghost text-xl">Crypto Tracker</a>
             </div>
-            <div className="navbar-end">
-                <input />
-                <button className="btn btn-ghost btn-circle">
+            <div className="navbar-end ">
+
+                {showSearch && (
+                <div
+                className={`fixed top-0 right-[70px] transition-all duration-300 ease-in-out transform shadow-lg p-3 rounded-md z-50 ${
+                  showSearch ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                }`}
+              >
+                <Search theme={theme}/>
+              </div>
+                )}
+
+                <button
+                className="btn btn-ghost btn-circle"
+                onClick={toggleSearch}
+                aria-label="Toggle Search"
+            >
+                {showSearch ? (
+                // "X" icon when search is active
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                >
+                    <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                    />
+                </svg>
+                ) : (
+                // Lens icon when search is inactive
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke="currentColor">
+                    stroke="currentColor"
+                >
                     <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
                 </svg>
-                </button>
+                )}
+            </button>
                 <label className="swap swap-rotate">
                     {/* this hidden checkbox controls the state */}
                     <input type="checkbox" onChange={handleToggle} checked={theme == "light" ? false : true }/>
 
                     {/* sun icon */}
                     <svg
-                        className="swap-on h-8 w-8 fill-current"
+                        className="swap-on h-6 w-6 fill-current"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24">
                         <path
@@ -92,7 +134,7 @@ function Navbar(){
 
                     {/* moon icon */}
                     <svg
-                        className="swap-off h-8 w-8 fill-current"
+                        className="swap-off h-6 w-6 fill-current"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24">
                         <path
