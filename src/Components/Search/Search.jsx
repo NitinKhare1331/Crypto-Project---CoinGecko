@@ -9,7 +9,7 @@ function SearchResult({ isLoading, data, handleResultClick }) {
         <div
         className="absolute left-0 right-0 mt-2 max-h-60 overflow-hidden overflow-y-auto rounded-md shadow-lg bg-white divide-y divide-black z-10"
         >
-        {isLoading && <div className="text-yellow-500 flex items-center justify-center">Loading...</div>}
+        {isLoading && <div className="text-gray-600 flex items-center justify-center">Loading...</div>}
         {data && data.map((coin) => (
             <div key={coin.id} className="text-black py-2 px-4 cursor-pointer" onClick={() => handleResultClick(coin.id)}>
             {coin.name}
