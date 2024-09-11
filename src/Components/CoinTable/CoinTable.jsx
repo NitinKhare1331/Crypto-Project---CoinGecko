@@ -38,13 +38,13 @@ const CoinTable = () => {
                     <div className="basis-[25%] flex justify-start ml-20">
                         Coin
                     </div>
-                    <div className="basis-[25%] flex justify-start">
+                    <div className="basis-[25%] justify-start hidden md:inline-block">
                         Price
                     </div>
-                    <div className="basis-[25%] flex justify-start">
+                    <div className="basis-[25%] justify-start hidden md:inline-block">
                         24h Change
                     </div>
-                    <div className="basis-[25%] flex justify-start ">
+                    <div className="basis-[25%] justify-start hidden md:inline-block">
                         Market Cap
                     </div>
                 </div>
@@ -67,15 +67,15 @@ const CoinTable = () => {
     
                                 </div>
 
-                                <div className="basis-[25%]">
+                                <div className="basis-[25%] hidden md:inline-block">
                                     {coin.current_price}
                                     { currency == "usd" ? " $" : " Rs"}
                                 </div>
-                                <div className="basis-[28%] ml-10">
+                                <div className="basis-[28%] ml-10 hidden md:inline-block">
                                     {coin.high_24h}
                                     { currency == "usd" ? " $" : " Rs"}
                                 </div>
-                                <div className="basis-[33%] flex justify-start">
+                                <div className="basis-[33%] justify-start hidden md:inline-block">
                                     {coin.market_cap}
                                     { currency == "usd" ? " $" : " Rs"}
                                 </div>
@@ -88,12 +88,12 @@ const CoinTable = () => {
                     <button 
                     onClick={()=> setPage(page-1)} 
                     disabled = {page===1}
-                    className="btn bg-[#0d20ba] btn-wide text-2xl text-white">
+                    className="bg-[#0d20ba] lg:font-semibold lg:text-2xl text-white lg:h-[47px] lg:w-[250px] hover:bg-gray-900 disabled:bg-gray-800 disabled:text-gray-700 sm:p-5">
                         Prev
                     </button>
                     <button 
                     onClick={()=> setPage(page+1)} 
-                    className="btn text-white btn-wide text-2xl bg-[#0d20ba]">
+                    className="bg-[#0d20ba] lg:font-semibold lg:text-2xl text-white lg:h-[47px] lg:w-[250px] hover:bg-gray-900 disabled:bg-gray-800 disabled:text-gray-700 sm:h-0">
                         Next
                     </button>
                 </div>

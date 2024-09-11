@@ -81,7 +81,7 @@ function Navbar(){
                 )}
 
                 <button
-                className="btn btn-ghost btn-circle"
+                className="btn btn-ghost btn-circle hidden md:inline-block"
                 onClick={toggleSearch}
                 aria-label="Toggle Search"
             >
