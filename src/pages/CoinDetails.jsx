@@ -42,7 +42,7 @@ function CoinDetails(){
                             {parse(coin?.description?.en)}
                         </p>
 
-                        <div className="w-full flex flex-col md:flex-row md:justify-around">
+                        <div className="w-full lg:ml-0~ ml-10 flex flex-col md:flex-row md:justify-around">
                             <div className="flex items-center mb-4 md:mb-0">
                                 <h2 className="text-xl font-bold">
                                     Rank
@@ -54,7 +54,7 @@ function CoinDetails(){
 
                             <div className="flex items-center mb-4 md:mb-0">
                             <h2 className="text-xl text-yellow-400 font-bold">
-                                    Current Price
+                                    Current Price :
                                 </h2>
                                 <span className="ml-3 text-xl">
                                     {coin?.market_data.current_price[currency]}
