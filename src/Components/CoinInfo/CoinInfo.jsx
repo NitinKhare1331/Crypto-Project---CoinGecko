@@ -31,7 +31,7 @@ const CoinInfo = ({ historicData, setDays, setCoinInterval, days, currency }) =>
         <div>
             <p className='flex items-center justify-center text-[40px] lg:font-bold font-normal'>Price Chart</p>
         </div>
-        <div className='lg:h-[400px] h-[200px] lg:ml-0 lg:w-[780px] w-[350px]'>
+        <div className='lg:h-[400px] h-[200px] lg:ml-0 lg:w-[780px] w-[340px]'>
             <Line 
                 data={{
                     labels: historicData.prices.map((coinPrice)=>{
@@ -78,7 +78,7 @@ const CoinInfo = ({ historicData, setDays, setCoinInterval, days, currency }) =>
             <p className='flex items-center justify-center text-[40px] lg:font-bold font-normal'>Market Caps Chart</p>
         </div>
         
-        <div className='lg:h-[400px] h-[200px] lg:ml-0 lg:w-[780px] w-[350px]'>
+        <div className='lg:h-[400px] h-[200px] lg:ml-0 lg:w-[780px] w-[340px]'>
             <Line 
                 data={{
                     labels: historicData.market_caps.map((coinPrice)=>{
@@ -125,7 +125,7 @@ const CoinInfo = ({ historicData, setDays, setCoinInterval, days, currency }) =>
             <p className='flex items-center justify-center text-[40px] lg:font-bold font-normal'>Total Volumes Chart</p>
         </div>
         
-        <div className='lg:h-[400px] h-[200px] lg:ml-0 lg:w-[780px] w-[350px]'>
+        <div className='lg:h-[400px] h-[200px] lg:ml-0 lg:w-[780px] w-[340px]'>
             <Line 
                 data={{
                     labels: historicData.total_volumes.map((coinPrice)=>{
