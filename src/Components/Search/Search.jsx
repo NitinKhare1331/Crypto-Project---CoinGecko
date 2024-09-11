@@ -43,7 +43,7 @@ const Search = ({ theme }) => {
     const limitedData = data?.coins ? data.coins.slice(0, 10) : [];
 
     return (
-        <div className="relative top-0 right-0 mr-3 z-50 md:hidden"> {/* This container must be relative */}
+        <div className="relative top-0 right-0 mr-3 z-50"> {/* This container must be relative */}
         <input
             type="search"
             value={search}
