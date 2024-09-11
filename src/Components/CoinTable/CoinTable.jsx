@@ -35,7 +35,7 @@ const CoinTable = () => {
             <div className="my-5 flex flex-col items-center justify-center gap-5 w-[80vw] mx-auto">
                 <div className="w-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white flex text-xl py-4 px-2 font-bold items-center justify-between">
                     {/* Header of the table */}
-                    <div className="lg:basis-[25%] lg:flex lg:justify-start lg:ml-20 ml-32">
+                    <div className="lg:basis-[25%] lg:flex lg:justify-start lg:ml-20 ml-28">
                         Coin
                     </div>
                     <div className="basis-[25%] justify-start hidden md:inline-block">
