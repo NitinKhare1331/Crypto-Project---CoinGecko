@@ -35,7 +35,7 @@ const CoinTable = () => {
             <div className="my-5 flex flex-col items-center justify-center gap-5 w-[80vw] mx-auto">
                 <div className="w-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white flex text-xl py-4 px-2 font-bold items-center justify-between">
                     {/* Header of the table */}
-                    <div className="basis-[25%] flex justify-start ml-20">
+                    <div className="lg:basis-[25%] lg:flex lg:justify-start lg:ml-20 ml-32">
                         Coin
                     </div>
                     <div className="basis-[25%] justify-start hidden md:inline-block">
@@ -88,12 +88,12 @@ const CoinTable = () => {
                     <button 
                     onClick={()=> setPage(page-1)} 
                     disabled = {page===1}
-                    className="bg-[#0d20ba] flex justify-center items-center lg:font-semibold lg:text-2xl text-white lg:h-[47px] lg:w-[250px] hover:bg-gray-900 disabled:bg-gray-800 disabled:text-gray-700 sm:p-5">
+                    className="rounded-md bg-[#0d20ba] flex justify-center items-center lg:font-semibold lg:text-2xl text-white lg:h-[47px] lg:w-[250px] hover:bg-gray-900 disabled:bg-gray-800 disabled:text-gray-700 w-[100px]">
                         Prev
                     </button>
                     <button 
                     onClick={()=> setPage(page+1)} 
-                    className="bg-[#0d20ba] lg:font-semibold lg:text-2xl text-white lg:h-[47px] lg:w-[250px] hover:bg-gray-900 disabled:bg-gray-800 disabled:text-gray-700 sm:h-0">
+                    className="rounded-md bg-[#0d20ba] lg:font-semibold lg:text-2xl text-white lg:h-[47px] lg:w-[250px] hover:bg-gray-900 disabled:bg-gray-800 disabled:text-gray-700 w-[100px]">
                         Next
                     </button>
                 </div>
