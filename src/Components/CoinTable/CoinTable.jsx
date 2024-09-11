@@ -88,7 +88,7 @@ const CoinTable = () => {
                     <button 
                     onClick={()=> setPage(page-1)} 
                     disabled = {page===1}
-                    className="bg-[#0d20ba] lg:font-semibold lg:text-2xl text-white lg:h-[47px] lg:w-[250px] hover:bg-gray-900 disabled:bg-gray-800 disabled:text-gray-700 sm:p-5">
+                    className="bg-[#0d20ba] flex justify-center items-center lg:font-semibold lg:text-2xl text-white lg:h-[47px] lg:w-[250px] hover:bg-gray-900 disabled:bg-gray-800 disabled:text-gray-700 sm:p-5">
                         Prev
                     </button>
                     <button 
